@@ -149,6 +149,10 @@ pre {
   margin-left: 10px;
 }
 
+.intro ul {
+  font-size: 1.3em;
+}
+
 .intro > h1, .outro > h1 {
   background-image: linear-gradient(bottom, rgb(36,145,204) 95%, rgb(134,120,191) 33%);
   background-image: -o-linear-gradient(bottom, rgb(36,145,204) 95%, rgb(134,120,191) 33%);
