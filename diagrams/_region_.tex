@@ -1,0 +1,77 @@
+\message{ !name(diagrams.tex)}\documentclass[11hpt]{article}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[all]{xy}
+\usepackage{syntax}
+\usepackage{trfrac}
+
+\newcommand{\rulelabel}[1]{
+\small(\emph{#1})
+}
+
+\newcommand{\ruletag}[1]{
+  \tag{\emph{#1}}
+}
+
+\renewcommand{\syntleft}{\normalfont\itshape}
+\renewcommand{\syntright}{}
+
+\begin{document}
+
+\message{ !name(diagrams.tex) !offset(53) }
+\section{Evaluation Rules/Relation}
+
+\begin{equation}
+\trfrac[]{}{
+  \lambda t \lit*{()} \rightarrow  t
+} \ruletag{e-inv}
+\end{equation}
+
+\begin{equation}
+\trfrac[]{}{
+  \lambda t \ v  \rightarrow  t
+} \ruletag{e-app}
+\end{equation}
+
+\begin{equation}
+\trfrac[]{
+  t_{2}  \rightarrow  t_{2}'
+}{
+  t_{1} \  t_{2}  \rightarrow t_{1} \  t_{2}'
+} \ruletag{e-arg-eval}
+\end{equation}
+
+\begin{equation}
+\trfrac[]{
+   t \rightarrow  t'
+}{
+  t \ v \rightarrow t' \ v
+} \ruletag{e-app-eval}
+\end{equation}
+
+\begin{equation*}
+\trfrac[\rulelabel{e-inv}]{
+}{
+  \lambda \lit*{false} \lit*{()} \to \lit*{false}
+}
+\end{equation*}
+
+\begin{equation*}
+\trfrac[\rulelabel{e-app-eval}]{
+  \trfrac[\rulelabel{e-inv}]{}{
+    \lambda \lambda \lit*{true} \lit*{()} \to \lambda \lit*{true}
+  }
+}{
+  \lambda \lambda \lit*{true} \lit*{()}\ \lit*{true}  \to \lambda \lit*{true}\ \lit*{true}
+}
+\begin{equation*}
+
+\begin{equation*}
+\trfrac[\rulelabel{e-app}]{}{
+  \lambda \lit*{true}\ \lit*{true} \to \lit*{true}
+}
+\begin{equation*}
+
+\message{ !name(diagrams.tex) !offset(51) }
+
+\end{document}
