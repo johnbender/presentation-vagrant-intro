@@ -236,8 +236,7 @@ pre {
   color: #503d15;
 }
 
-.reveal pre {
-  background: white;
+.reveal pre code {
   font-family: "UbuntuMono", Menlo, Monaco, Consolas, monospace;
 }
 
